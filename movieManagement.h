@@ -1,0 +1,24 @@
+#pragma once
+#include "list.h"
+#include "movie.h"
+#include "suatchieuManagement.h"
+
+using namespace std;
+
+class movieManagement :protected list<movie> 
+{   
+    
+    public:
+
+    movieManagement();
+    ~movieManagement();
+    node<movie>* getHead();
+    void start();
+    void addMovie(const movie& m);
+    bool removeMovie(string);
+    bool editMovie(string& , string&);
+    void printListMovies();
+    void readFile();
+    void writeFile();
+    bool checkPrimarykey(const string&);
+};
