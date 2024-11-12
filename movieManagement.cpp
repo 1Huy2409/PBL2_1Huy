@@ -7,9 +7,9 @@ movieManagement::movieManagement()
 movieManagement::~movieManagement()
 {
 }
-node<movie>* movieManagement::getHead() {
-    return this->head;
-}
+// node<movie>* movieManagement::getHead() {
+//     return this->head;
+// }
 void movieManagement::addMovie(const movie &newMovie)
 {
     this->insert(newMovie);

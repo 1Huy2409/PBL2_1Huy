@@ -13,8 +13,8 @@ class roomManagement:protected list<room> {
     
     //cac phuong thuc quan ly phong chieu
     void start();
-    //tra ve con tro room dau tien
     node<room>* getHead();
+    //tra ve con tro room dau tien
     //add rm edit printList
     void addRoom(const room &);
     bool removeRoom(string);

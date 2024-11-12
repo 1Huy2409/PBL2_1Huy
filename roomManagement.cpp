@@ -4,7 +4,7 @@ roomManagement::roomManagement() {}
 roomManagement::~roomManagement() {}
 
 node<room>* roomManagement::getHead() {
-    return this->head;  // Trả về con trỏ đầu tiên của danh sách phòng chiếu
+    return head;  // Trả về con trỏ đầu tiên của danh sách phòng chiếu
 }
 
 void roomManagement::addRoom(const room &newRoom)
@@ -63,6 +63,7 @@ void roomManagement::readFile()
                 token.setRoomId(line.substr(0, pos));
                 line.erase(0, pos + 1);
                 token.setCapacity(stoi(line));
+                this->addRoom(token);
             }
         }
         catch (const std::exception &e)
@@ -204,7 +205,7 @@ void roomManagement::start()
                 new_room.setRoomId(newId);
             }
             // m.createNewSuatchieu(new_room.getId());
-            m.createNewSuatchieuForRoom(new_room.getId());
+            // m.createNewSuatchieuForRoom(new_room.getId());
 
             this->addRoom(new_room);
             this->writeFile();

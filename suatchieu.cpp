@@ -1,6 +1,6 @@
 #include "suatchieu.h"
 
-suatchieu::suatchieu(string masuat, string maphim, string maphong, string gio, string ngay, string ghengoi) : showTimeId(masuat), movieId(maphim), roomId(), time(gio), date(ngay), seat_infor(ghengoi) {}
+suatchieu::suatchieu(string masuat, string maphim, string maphong, string gio, string ngay, string ghengoi) : showTimeId(masuat), movieId(maphim), roomId(maphong), time(gio), date(ngay), seat_infor(ghengoi) {}
 
 suatchieu::~suatchieu() {}
 

@@ -35,6 +35,7 @@ protected:
 public:
     list();
     virtual ~list();
+    virtual node<T>* getHead();
     virtual void insert(T data);
     virtual void remove(T data);
     virtual void print();
@@ -87,7 +88,10 @@ void list<T>::insert(T data)
     }
     this->size++;
 }
-
+template <class T>
+node<T>* list<T> :: getHead() {
+    return this->head;
+}
 template <class T>
 void list<T>::remove(T data)
 {

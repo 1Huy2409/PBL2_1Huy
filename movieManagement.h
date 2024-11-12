@@ -12,7 +12,6 @@ class movieManagement :protected list<movie>
 
     movieManagement();
     ~movieManagement();
-    node<movie>* getHead();
     void start();
     void addMovie(const movie& m);
     bool removeMovie(string);

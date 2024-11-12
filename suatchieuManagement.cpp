@@ -364,6 +364,7 @@ string suatchieumanager::pickseat()
 }
 void suatchieumanager::createNewSuatchieuForMovie(string movieId)
 {
+
     roomManagement rm;
     rm.readFile();
     ofstream outFile("suatchieu.txt", ios::app);
@@ -378,16 +379,15 @@ void suatchieumanager::createNewSuatchieuForMovie(string movieId)
         {
             string showTimeId = "S" + to_string(i + 1);
             string time = to_string(timehour) + timeminute;
-            time += 2;
+            timehour += 2;
             string date = getCurrentDate();
             string seat_infor = "";
 
             // tao them mot suat chieu khi them phong, moi phim duoc dua vao phong do => duyet qua tat ca cac phim
             suatchieu s(showTimeId, movieId, currentRoom->data.getId(), time, date, seat_infor);
-            outFile << s.getId() << ";" << s.getMovieId() << ";" << s.getRoomId() << ";" << s.getTime() << ";" << s.getSeatInfor();
-            outFile << endl
-                    << endl
-                    << endl;
+            outFile << s.getId() << ";" << s.getMovieId() << ";" << s.getRoomId() << ";" << s.getTime() << ";" << s.getDate() << ";" << s.getSeatInfor();
+            outFile << endl << endl << endl;
+            showTimeId = "";
         }
         currentRoom = currentRoom->next;
     }
